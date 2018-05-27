@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Coursach.Visit_Tabel>
+
+@{
+    ViewBag.Title = "MonthSummary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Итоги за месяц</h2>
+ <a href="javascript:window.print()">Распечатать</a>
+<p></p>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Month.Month_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Visit_Days_Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kids__Personal_Account.Kid_FIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kids__Personal_Account.Parent.Parent_FIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kids__Personal_Account.Pay_Sum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kids__Personal_Account.Paid)
+        </th>
+        <th></th>
+    </tr>
+    @{
+        int i = 0;
+    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Month.Month_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Visit_Days_Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kids__Personal_Account.Kid_FIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kids__Personal_Account.Parent.Parent_FIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => ((Dictionary<int, string>)ViewData["Sum"]).ElementAt(@i).Value)
+            @{i++;
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kids__Personal_Account.Paid)
+        </td>
+        <td>
+            <a href="~/Kids__Personal_Account/Edit/@item.Personal_Account_ID">Edit</a>
+        </td>
+    </tr>
+}
+
+</table>

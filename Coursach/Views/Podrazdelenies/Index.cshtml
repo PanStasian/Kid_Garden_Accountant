@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Coursach.Podrazdelenie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Подразделения</h2>
+
+<p>
+    @Html.ActionLink("Создать", "Create")
+</p>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Podrazdelenie_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <a href="~/Parents/Index/@item.Podrazdelenie_Code">@item.Podrazdelenie_Name</a>
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Podrazdelenie_Code }, new { @class = "links" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Podrazdelenie_Code }, new { @class = "links" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Podrazdelenie_Code }, new { @class = "links" })
+        </td>
+    </tr>
+}
+
+</table>

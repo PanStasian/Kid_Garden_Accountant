@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Coursach.Visit_Tabel>
+
+@{
+    ViewBag.Title = "Months";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Информация за месяц</h2>
+
+<p></p>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Month.Month_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Month.Work_Days_Amount)
+        </th>
+        <th>
+            Расчёт оплаты
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Month.Month_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Month.Work_Days_Amount)
+        </td>
+        <td>
+            @Html.ActionLink("Summary for month","MonthSummary",new { idGarden = item.Kids__Personal_Account.Kid_Garden_Number,idMonth = item.Month_Code})
+        </td>
+        <td>
+            <a href="~/Months/Edit/@item.Month_Code">Edit</a>
+        </td>
+    </tr>
+}
+
+</table>

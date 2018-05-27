@@ -1,0 +1,42 @@
+﻿@model Coursach.Visit_Tabel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Visit_Tabel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Visit_Days_Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visit_Days_Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kids__Personal_Account.Kid_FIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kids__Personal_Account.Kid_FIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Month.Month_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Month.Month_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Visit_Tabel }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

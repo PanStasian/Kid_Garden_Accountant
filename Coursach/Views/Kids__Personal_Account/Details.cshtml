@@ -1,0 +1,50 @@
+﻿@model Coursach.Kids__Personal_Account
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kids__Personal_Account</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Kid_FIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kid_FIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pay_Sum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pay_Sum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kid_Garden.Kid_Garden_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kid_Garden.Kid_Garden_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parent.Parent_FIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parent.Parent_FIO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Personal_Account }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

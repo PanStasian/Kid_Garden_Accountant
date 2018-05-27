@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Coursach.Kid_Garden>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Детские Сады</h2>
+
+<p>
+    @Html.ActionLink("Создать", "Create")
+</p>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>
+
+            @Html.DisplayNameFor(model => model.Kid_Garden_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pay_Sum)
+        </th>
+        <th>
+
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <a href="~/Kids__Personal_Account/Index/@item.Kid_Garden_Number">@item.Kid_Garden_Name</a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pay_Sum)
+        </td>
+        <td>
+            <a  href="~/Visit_Tabel/Months/@item.Kid_Garden_Number">Months</a>
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Kid_Garden_Number }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Kid_Garden_Number }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Kid_Garden_Number })
+        </td>
+    </tr>
+}
+
+</table>

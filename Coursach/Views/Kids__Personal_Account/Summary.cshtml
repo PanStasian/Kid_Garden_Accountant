@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Coursach.Visit_Tabel>
+
+@{
+    ViewBag.Title = "Summary";
+}
+
+<h2>Summary</h2>
+
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Visit_Days_Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kids__Personal_Account.Kid_FIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kids__Personal_Account.Parent.Parent_FIO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Month.Month_Name)
+        </th>
+        <th>
+            In Total
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kids__Personal_Account.Paid)
+        </th>
+        <th></th>
+    </tr>
+    @{ 
+        int i = 0;
+    }
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Visit_Days_Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kids__Personal_Account.Kid_FIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kids__Personal_Account.Parent.Parent_FIO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Month.Month_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => ((Dictionary<int, string>)ViewData["Sum"]).ElementAt(@i).Value)
+            @{i++;
+            }
+        </td>
+        <td>
+            
+            @Html.DisplayFor(modelItem => item.Kids__Personal_Account.Paid)
+        </td>
+        <td>
+            @Html.ActionLink("Edit","EditSummary", new { id = item.Kids__Personal_Account.ID_Personal_Account })
+        </td>
+    </tr>
+}
+
+</table>
+
+

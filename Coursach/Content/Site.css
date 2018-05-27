@@ -1,0 +1,115 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+ }
+a{text-decoration:none;}
+a:hover{text-decoration:none;}
+a:focus{text-decoration:none;color:#453c80;}
+a:active{text-decoration:none;color:#453c80;}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+.panels{
+    padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 10px;
+	margin-right: 0px;
+    margin-left: 90px;
+    border-radius: 15px;
+    background-color: rgba(200, 200, 200, 0.53);
+    text-align: center;
+	display: inline-block;
+	width: 230px;
+	height: 260px;
+    transition-duration: 0.8s;
+}
+
+.panels:hover{
+	background-color: rgba(31, 72, 167, 0.95);
+    color:rgb(255, 252, 252);
+	border-radius: 25px;
+	transform: translateY(10px);
+	height: 280px;
+}
+.panels:hover .moreButton{
+    background-color:white;
+    color:rgba(31, 72, 167, 0.95);
+    font-weight:bold;
+    font-size:16px;
+    transform: translateY(-10px);
+}
+.moreButton{
+    position:absolute;
+    border: none;
+	padding: 0.6em 1.2em;
+    background-color: rgba(31, 72, 167, 0.95);
+	color: #fff;
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-weight:bold;
+    font-size:16px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-block;
+	top:65%;
+    right:23%;
+	border-radius: 25px;
+    transition:0.8s;
+}
+
+.panels .moreButton:hover{
+	background-color: rgb(6, 43, 129);
+    cursor:pointer;
+    color:#fff;
+}
+
+.jumbotrons{
+    border:solid 0px;
+    height:100px;
+    background-color: rgba(200, 200, 200, 0.53);
+    border-radius:50%;
+}
+
+.jumbotrons h1{
+    text-align:center;
+    margin-top:-20px;
+}
+
+#headblock{
+    background-color: rgba(31, 72, 167, 0.95);
+}
+
+.headbuttons{
+    color:#fff;
+}
+.headbuttons:hover{
+    color:rgb(6, 43, 129);
+}
+
+
+.links{
+    text-decoration:none;
+    color:#0013a8;
+}
+
+.links:hover{text-decoration:none;}
+.limks:focus{text-decoration:none;color:#0d1674;}
+.links:active{text-decoration:none;color:#0d1674;}
